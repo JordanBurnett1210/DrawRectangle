@@ -17,6 +17,12 @@ public class Panel extends JPanel
 	private SpringLayout baseLayout;
 	private ShapePanel shapePanel;
 	private JButton drawRectangleButton;
+	private JButton drawTriangleButton;
+	private JButton drawCircleButton;
+	private JButton drawEllipseButton;
+	private JButton drawSquareButton;
+	private JButton drawPolygonButton;
+	private JButton clearButton;
 	private ArrayList<Rectangle> rectangleList;
 	
 	public Panel(Controller baseController)
@@ -27,6 +33,12 @@ public class Panel extends JPanel
 		rectangleList = new ArrayList<Rectangle>();
 		
 		drawRectangleButton = new JButton("Draw the rectanlge");
+		drawSquareButton = new JButton("Draw the square");
+		drawCircleButton = new JButton("Draw the circle");
+		drawEllipseButton = new JButton("Draw the ellipse");
+		drawTriangleButton = new JButton("Draw the triangle");
+		drawPolygonButton = new JButton("Draw the polygon");
+		clearButton = new JButton("clear");
 		
 		setupPanel();
 		setupLayout();
