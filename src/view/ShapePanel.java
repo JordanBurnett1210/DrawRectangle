@@ -35,15 +35,13 @@ public class ShapePanel extends JPanel
 	{
 		polygonList.clear();
 		triangleList.clear();
-		rectangleList.clear();
-		squareList.clear();
 		circleList.clear();
 		ellipseList.clear();
 		
 		repaint();
 	}
 	
-	public void addTringle()
+	public void addTriangle()
 	{
 		int [] xPoints = new int[3];
 		int [] yPoints = new int[3];
@@ -127,7 +125,7 @@ public class ShapePanel extends JPanel
 		
 		Graphics2D mainGraphics = (Graphics2D) currentGraphics;
 		
-		for(Polygon triangle : triangleList)
+		for(Polygon current : triangleList)
 		{
 			int randomStroke = (int)(Math.random() * 7);
 			int red = (int)(Math.random() * 256);
@@ -135,6 +133,8 @@ public class ShapePanel extends JPanel
 			int green = (int)(Math.random() * 256);
 			mainGraphics.setColor(new Color(red, green, blue));
 			mainGraphics.setStroke(new BasicStroke(randomStroke));
+			
+			mainGraphics.fill(current);
 		}
 		
 		for(Polygon current : polygonList)
@@ -145,7 +145,33 @@ public class ShapePanel extends JPanel
 			int green = (int)(Math.random() * 256);
 			mainGraphics.setColor(new Color(red, green, blue));
 			mainGraphics.setStroke(new BasicStroke(randomStroke));
+			
+			mainGraphics.fill(current);
 		}
+		
+		for(Ellipse2D current : circleList)
+		{
+			int randomStroke = (int)(Math.random() * 7);
+			int red = (int)(Math.random() * 256);
+			int blue = (int)(Math.random() * 256);
+			int green = (int)(Math.random() * 256);
+			mainGraphics.setColor(new Color(red, green, blue));
+			mainGraphics.setStroke(new BasicStroke(randomStroke));
+			
+			mainGraphics.fill(current);
+		}
+		for(Ellipse2D current : ellipseList)
+		{
+			int randomStroke = (int)(Math.random() * 7);
+			int red = (int)(Math.random() * 256);
+			int blue = (int)(Math.random() * 256);
+			int green = (int)(Math.random() * 256);
+			mainGraphics.setColor(new Color(red, green, blue));
+			mainGraphics.setStroke(new BasicStroke(randomStroke));
+			
+			mainGraphics.fill(current);
+		}
+		
 	}
 	
 }
